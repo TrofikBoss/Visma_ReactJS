@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="page"></div>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script type="text/babel">
+        let root = ReactDOM.createRoot(document.querySelector("#page"));
+        function Logo(props) {
+            if (props.type == "white") {
+                return <a href={props.url} class="logo"><img src="/img/WhiteLogo.svg" alt="Логотип"></img></a>
+            } else {
+                return <a href={props.url} class="logo"><img src="/img/logo.svg" alt="Логотип"></img></a>
+            }
+            
+        }
+        function MenuItem(props) {
+            return <li><a href={props.url}>{props.text}</a></li>
+        }
+        function UslugiGroup(props) {
+            return <div class="uslugi__left__group"><a href={props.href}><p>{props.text}</p><div class="pdf__button"></div></a></div>
+        }
+        function UslugiBlock(props) {
+            return <a href={props.href}><div class="uslugi__right__block"><h3>УСЛУГИ</h3><p>{props.text}</p></div></a>
+        }
+        function TextBlock(props) {
+            return <a href={props.href}><div class={"textblock " + props.color}><h3>{props.title}</h3><p>{props.text}</p></div></a>
+        }
+        function NewsBlock(props) {
+            return <div class="news__block"><img src={props.image}></img><p class="news__block__date">{props.date}</p><h3 class="news__block__title">{props.title}</h3><p class="news__block__text">{props.text}</p></div>
+        }
+        root.render(
+            <div>
+                <header>
+                    <div class="container">
+                        <Logo url=""/>
+                        <nav class="header__menu">
+                            <ul>
+                                <MenuItem text="О компании" url=""/>
+                                <MenuItem text="Новости" url=""/>
+                                <MenuItem text="Новости" url=""/>
+                                <MenuItem text="Новости" url=""/>
+                                <MenuItem text="Новости" url=""/>
+                                <MenuItem text="Новости" url=""/>
+                                <MenuItem text="Новости" url=""/>
+                            </ul>    
+                        </nav>
+                        <form action="" method="POST" class="header__search">
+                            <button class="header__search__button"></button>
+                            <input type="text" class="header__search__input"></input>
+                        </form>
+                    </div>
+                </header>
+                <section class="banner">
+                    <div class="container">
+                        <div class="banner__left">
+                            <h1>Тавимский морской порт VISMA</h1>
+                            <p class="banner__left__text">Vel posuere nibh odio placerat massa vel tellus tortor. Varius eget nunc scelerisque etiam felis facilisi ante viverra sem. Nunc eros elementum.</p>
+                            <p class="font-bold banner__left__about">О КОМПАНИИ</p>
+                        </div>
+                        <div class="banner__right">
+                            <ul>
+                                <li><TextBlock title="УСЛУГИ" text="Погрузочно-разгрузочная деятельность" href="" color="blue"/></li>
+                                <li><TextBlock title="УСЛУГИ" text="Хранение грузов" href="" color="blue"/></li>
+                                <li><TextBlock title="УСЛУГИ" text="Складские операции" href="" color="blue"/></li>
+                                <li><TextBlock title="УСЛУГИ" text="Швартовые операции" href="" color="blue"/></li>    
+                            </ul>
+                        </div>
+                    </div>    
+                </section>
+                <section class="uslugi">
+                    <div class="container">
+                        <div class="uslugi__left">
+                            <h2>Услуги</h2>
+                            <ul>
+                                <li><UslugiGroup text="Тарифы на услуги по обеспечению контроля доступа на территорию VISMA на 2022 год" href=""/></li>
+                                <li><UslugiGroup text="Условия определения цены договора и тарифы на работы" href=""/></li>
+                                <li><UslugiGroup text="Договор перевалки (типовая форма)" href=""/></li>
+                            </ul>
+                        </div>
+                        <div class="uslugi__right">
+                            <ul>
+                                <li><TextBlock title="УСЛУГИ" text="Хранение грузов" href="" color="purple"/></li>
+                                <li><TextBlock title="УСЛУГИ" text="Швартовые операции" href="" color="purple"/></li>
+                                <li><TextBlock title="УСЛУГИ" text="Складские операции" href="" color="purple"/></li>
+                                <li><TextBlock title="УСЛУГИ" text="Агентское обслуживание судов" href="" color="purple"/></li>
+                                <li><TextBlock title="УСЛУГИ" text="Буксировка / сопровождение судов" href="" color="purple"/></li>
+                                <li><TextBlock title="УСЛУГИ" text="Погрузочно-разгрузочная деятельность" href="" color="purple"/></li>
+                            </ul>
+                        </div>
+                    </div>    
+                </section>
+                <section class="about">
+                    <div class="container">
+                        <div class="about__left">
+                            <h2>О компании</h2>
+                            <p>Tristique orci consectetur sit felis. Sed ac auctor tellus lobortis. Enim non turpis nulla nec a sapien sit amet molestie. Et id malesuada gravida sit volutpat. Volutpat sed lectus elementum diam neque facilisis in. Convallis nibh sem in viverra quis. Interdum pharetra.</p>
+                            <p>Libero nunc porttitor id mi convallis ultricies convallis erat. At sagittis nisi at in diam sit.</p>
+                            <ul>
+                                <li>Vivamus tincidunt non lectus odio magna semper odio risus.</li>
+                                <li>Vivamus tincidunt non lectus odio magna semper odio risus.</li>
+                                <li>Vivamus tincidunt non lectus odio magna semper odio risus. Vivamus tincidunt non lectus odio magna semper odio risus.Vivamus tincidunt non lectus odio magna semper odio risus.</li>
+                                <li>Vivamus tincidunt non lectus odio magna semper odio risus.</li>
+                                <li>Vivamus tincidunt non lectus odio magna semper odio risus.</li>
+                            </ul>
+                            <p>Quam accumsan mauris enim quam. A commodo ultrices urna vitae nibh rhoncus at nisl. Duis nibh libero ut enim. Metus aliquam cursus molestie sapien risus. Suspendisse volutpat.</p>
+                            <ul>
+                                <li>Vivamus tincidunt non lectus odio magna semper odio risus.</li>
+                                <li>Vivamus tincidunt non lectus odio magna semper odio risus.</li>
+                                <li>Vivamus tincidunt non lectus odio magna semper odio risus.</li>
+                                <li>Vivamus tincidunt non lectus odio magna semper odio risus.</li>
+                            </ul>
+                        </div>
+                        <div class="about__right">
+                            <img src="/img/video.png" class="about__right__video"></img>
+                            <TextBlock title="Запрос ставки и условий погрузочно-разгрузочных работ" text="Рассчитайте моментально стоимость полных портовых услуг в порту VISMA" href="" color="blue"/>
+                        </div>
+                    </div>
+                </section>
+                <section class="news">
+                    <div class="container">
+                        <h2>Новости</h2>    
+                        <ul class="news_list">
+                            <li><NewsBlock image="/img/News1.png" date="20/05/22" title="Semper eu pulvinar eget integer" text="Pretium duis phasellus netus ac. Nunc nibh nunc integer feugiat et aliquam cras. Amet pharetra montes ipsum gravida tellus tellus."/></li>
+                            <li><NewsBlock image="/img/News2.png" date="20/02/22" title="Vitae id nec nulla sit nunc cursus curabitur tempus vel enim." text="Cras arcu ac commodo suspendisse commodo ipsum turpis dui. Quis pharetra malesuada eget sit egestas et integer. Suspendisse a."/></li>
+                            <li><NewsBlock image="/img/News3.png" date="30/12/21" title="Integer nisi sagittis in aliquet. Enim eget varius lacinia est a." text="Lectus tempus felis pretium vitae. Tempor massa vestibulum condimentum cursus diam quam. Mattis facilisi dignissim donec eget vel."/></li>
+                            <li><NewsBlock image="/img/News4.png" date="29/06/21" title="Facilisis vitae proin quis" text="Iaculis diam quam velit sit nunc turpis ultricies elementum. Vitae lacinia tristique rutrum faucibus nulla quis ultricies. Risus."/></li>
+                        </ul>
+                    </div>    
+                </section>
+                <footer>
+                    <div class="footer">
+                        <div class="container">
+                            <p class="footer__textimg pos out">123456, г. Тавима, ул. Морская, д. 21</p>
+                            <Logo type="white" url="/"/>
+                            <div class="footer__groupcont">
+                                <p class="footer__textimg pos">123456, г. Тавима, ул. Морская, д. 21</p>
+                                <p class="footer__textimg phone">+7 (123) 456-67-89</p>
+                                <p class="footer__textimg mail">order@visma.ru</p>
+                            </div>
+                        </div>
+                    </div>  
+                </footer>
+            </div>
+        );
+    </script>
+</body>
+</html>
